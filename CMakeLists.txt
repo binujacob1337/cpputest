@@ -4,13 +4,12 @@ cmake_minimum_required(VERSION 3.20.0)
 
 set(CPPUTEST_DIR ${ZEPHYR_CURRENT_MODULE_DIR})
 
-zephyr_library()
-
-target_include_directories(
+include_directories(
   ${CPPUTEST_DIR}/include
   ${CPPUTEST_DIR}/include/CppUTest
   ${CPPUTEST_DIR}/include/CppUTestExt)
 
+zephyr_library()
 
 zephyr_library_sources(
   ${CPPUTEST_DIR}/syscalls.c
